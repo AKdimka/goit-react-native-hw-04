@@ -22,8 +22,6 @@ const initialState = {
 };
 
 export default function LoginScreen({ navigation }) {
-	console.log(navigation);
-	console.log(11111111111111111);
 	const [isKeyboardShow, setIsKeyboardShow] = useState(false);
 	const [state, setState] = useState(initialState);
 	const [dimentions, setDimentions] = useState(Dimensions.get('window').width - 20 * 2);
