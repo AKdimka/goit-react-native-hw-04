@@ -1,6 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import { StyleSheet } from 'react-native';
+
 import RegistrationScreen from './Screens/auth/RegistrationScreen';
 import LoginScreen from './Screens/auth/LoginScreen';
 
@@ -29,9 +31,9 @@ export const useRoute = (isAuth) => {
 	}
 	return (
 		<MainTab.Navigator
-			activeColor="#e91e63"
-			barStyle={{ backgroundColor: 'tomato' }}
-			ScreenOptions={{ showLabel: false }}>
+			tabBarOptions={{
+				showLabel: false,
+			}}>
 			<MainTab.Screen
 				name='Posts'
 				component={PostsScreen}
@@ -39,9 +41,10 @@ export const useRoute = (isAuth) => {
 					headerShown: false,
 					tabBarIcon: ({ focused, size, color }) => (
 						<SimpleLineIcons
+							style={focused && styles.focusNav}
 							name="grid"
 							size={24}
-							color={color} />
+							color='#212121' />
 					),
 				}}
 			/>
@@ -52,9 +55,10 @@ export const useRoute = (isAuth) => {
 					headerShown: false,
 					tabBarIcon: ({ focused, size, color }) => (
 						<Ionicons
+							style={focused && styles.focusNav}
 							name="add"
-							size={size}
-							color={color} />
+							size={24}
+							color='#212121' />
 					),
 				}}
 			/>
@@ -65,11 +69,21 @@ export const useRoute = (isAuth) => {
 					headerShown: false,
 					tabBarIcon: ({ focused, size, color }) => (
 						<Feather
+							style={focused && styles.focusNav}
 							name="user"
-							size={size}
-							color={color} />
+							size={24}
+							color='#212121' />
 					),
 				}} />
 		</MainTab.Navigator>
 	)
 }
+const styles = StyleSheet.create({
+	focusNav: {
+		paddingVertical: 7,
+		paddingHorizontal: 28,
+		borderRadius: 20,
+		backgroundColor: '#FF6C00',
+		color: '#fff'
+	}
+})
