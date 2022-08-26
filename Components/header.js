@@ -1,10 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Header({ title }) {
+import { Feather } from '@expo/vector-icons';
+
+export default function Header({ title, out }) {
 
 	return (
 		<View style={styles.header}>
+			<Feather name="arrow-left" size={20} color={out ? "#FFF" : "rgba(33, 33, 33, 0.8"} />
 			<Text style={styles.headerText}>{title}</Text>
+			<Feather name="log-out" size={20} color={out ? "#BDBDBD" : "#FFF"} />
 		</View>
 	)
 }
@@ -15,12 +19,13 @@ const styles = StyleSheet.create({
 		height: 80,
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'center',
+		justifyContent: 'space-between',
 		borderBottomWidth: 1,
 		borderBottomColor: 'rgba(0, 0, 0, 0.3)',
 		paddingTop: 27,
 		paddingBottom: 12,
-		backgroundColor: '#fff'
+		backgroundColor: '#fff',
+		paddingHorizontal: 16,
 	},
 	headerText: {
 		fontWeight: '700',
