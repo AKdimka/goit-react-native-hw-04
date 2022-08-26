@@ -12,12 +12,12 @@ import ProfileScreen from './Screens/main/ProfileScreen';
 
 import { SimpleLineIcons, Feather, Ionicons } from '@expo/vector-icons';
 
-
 const AuthStack = createNativeStackNavigator();
 const MainTab = createBottomTabNavigator();
 
 export const useRoute = (isAuth) => {
 	if (!isAuth) {
+
 		return (<AuthStack.Navigator>
 			<AuthStack.Screen
 				options={{ headerShown: false }}
@@ -29,11 +29,13 @@ export const useRoute = (isAuth) => {
 				component={RegistrationScreen} />
 		</AuthStack.Navigator>)
 	}
+
 	return (
 		<MainTab.Navigator
 			tabBarOptions={{
 				showLabel: false,
 			}}>
+			{/* <Header /> */}
 			<MainTab.Screen
 				name='Posts'
 				component={PostsScreen}

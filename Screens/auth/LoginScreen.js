@@ -26,6 +26,7 @@ export default function LoginScreen({ navigation }) {
 	const [state, setState] = useState(initialState);
 	const [dimentions, setDimentions] = useState(Dimensions.get('window').width - 20 * 2);
 
+
 	useEffect(() => {
 		const onChange = () => {
 			const width = Dimensions.get("window").width - 20 * 2;
@@ -46,6 +47,7 @@ export default function LoginScreen({ navigation }) {
 		keyBoardHide()
 		console.log(state);
 		setState(initialState);
+		navigation.navigate('Posts')
 	}
 
 	return (
@@ -146,7 +148,7 @@ const styles = StyleSheet.create({
 		height: 50,
 		backgroundColor: '#F6F6F6',
 		borderWidth: 1,
-		borderColor: '#E8E8E8',
+		borderColor: '#E8E8E8' /* onFocus ? '#E8E8E8' : '#FF6C00' */,
 		color: '#212121',
 		borderRadius: 8,
 		padding: 16,
