@@ -18,14 +18,16 @@ const styles = StyleSheet.create({
 		display: 'flex',
 		flexDirection: 'row',
 		height: 60,
-		marginBottom: 15,
+		marginBottom: 30,
 	},
 	img: {
 		width: 60,
 		height: 60,
+		borderRadius: 16,
 	},
 	userText: {
 		marginLeft: 8,
+		justifyContent: 'center'
 	},
 	name: {
 		fontFamily: 'Roboto-Medium',

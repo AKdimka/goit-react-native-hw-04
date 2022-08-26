@@ -13,7 +13,6 @@ import {
 	Dimensions,
 } from 'react-native';
 
-
 const initialState = {
 	login: '',
 	email: '',

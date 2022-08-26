@@ -35,7 +35,6 @@ export const useRoute = (isAuth) => {
 			tabBarOptions={{
 				showLabel: false,
 			}}>
-			{/* <Header /> */}
 			<MainTab.Screen
 				name='Posts'
 				component={PostsScreen}
@@ -46,7 +45,7 @@ export const useRoute = (isAuth) => {
 							style={focused && styles.focusNav}
 							name="grid"
 							size={24}
-							color='#212121' />
+							color='rgba(33, 33, 33, 0.8)' />
 					),
 				}}
 			/>
@@ -60,7 +59,7 @@ export const useRoute = (isAuth) => {
 							style={focused && styles.focusNav}
 							name="add"
 							size={24}
-							color='#212121' />
+							color='rgba(33, 33, 33, 0.8)' />
 					),
 				}}
 			/>
@@ -74,7 +73,7 @@ export const useRoute = (isAuth) => {
 							style={focused && styles.focusNav}
 							name="user"
 							size={24}
-							color='#212121' />
+							color='rgba(33, 33, 33, 0.8)' />
 					),
 				}} />
 		</MainTab.Navigator>

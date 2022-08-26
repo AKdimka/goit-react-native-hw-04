@@ -1,10 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native';
 
+import Header from "../../Components/header";
+
 export default function CommentsScreen() {
 
 	return (
 		<View style={styles.container}>
-			<Text>CommentsScreen</Text>
+			<Header title='Коментарі' />
+			<View style={styles.main}>
+
+			</View>
 		</View>
 	)
 }
@@ -12,7 +17,13 @@ export default function CommentsScreen() {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
+		justifyContent: 'flex-start',
+		backgroundColor: '#fff'
+	},
+	main: {
+		display: 'flex',
+		flexDirection: 'column',
+		paddingTop: 30,
+		paddingHorizontal: 16,
 	}
 })

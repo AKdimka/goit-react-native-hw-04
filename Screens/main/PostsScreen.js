@@ -1,20 +1,32 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 import Header from "../../Components/header";
 import User from "../../Components/user";
+import Publication from "../../Components/publication";
+
+import photo1 from '../../assets/images/publication-1.jpg'
+import photo2 from '../../assets/images/publication-2.jpg'
 
 export default function PostsScreen() {
 
 	return (
 		<View style={styles.container}>
 			<Header title='Публікції' />
-			<View style={styles.main}>
+			<ScrollView style={styles.main}>
 
 				<User />
-				<User />
+				<Publication title={'Ліс'}
+					image={photo1}
+					coments={0}
+					location={'Ivano-Frankivsk Region, Ukraine'} />
 
-			</View>
+				<Publication title={'Чорне море'}
+					image={photo2}
+					coments={0}
+					location={'Odessa, Ukraine'} />
+			</ScrollView>
+
 		</View>
 	)
 }
